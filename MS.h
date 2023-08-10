@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MS.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:22:16 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/10 14:24:37 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/10 14:54:27 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,26 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
+typedef struct s_hdoc
+{
+	char *limiter;
+	struct s_hdoc *next;
+}	t_hdoc;
+typedef struct s_args
+{
+	char *arg;
+	struct s_args *next;
+}	t_args;
 typedef struct s_cmd
 {
 	int		infile;
 	int		outfile;
 	char	*cmd;
-	char	**args;
-	char	**newpaths;
+	t_args	*args;
+	t_hdoc	*herdoc;
+	bool	appand;		
 }	t_cmd;
 
 typedef struct s_data
