@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:22:16 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/10 21:19:16 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/10 21:38:38 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ char *organizer(int index, int nindex, int cntr, char *str);
 void	add_spc(int *index, int *nindex, char *str,char **out);
 void	add_spc2(int *index, int *nindex, char *str,char **out);
 int	add_spc3(int *index, int *nindex, char *str,char **out);
+int	add_spc4(int *index, int *nindex, char *str,char **out);
 /************************************************************************/
 #endif

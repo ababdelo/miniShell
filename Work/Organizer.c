@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:15:23 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/10 21:32:22 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/10 21:41:52 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,36 @@ char *organizer(int index, int nindex, int cntr, char *str)
 		else if (str[index] == '>')
 			add_spc(&index,&nindex,str,&out);
 		else if(str[index] == '\'')
+		{
 			if (add_spc3(&index, &nindex, str, &out) == -1)
 				return "Inclosed single quote";
+		}
+		else if(str[index] == '"')
+		{
+			if (add_spc4(&index, &nindex, str, &out) == -1)
+				return "Inclosed double quote";
+		}
 		if(str[index] == '\0')
 			break;
 		out[++nindex] = str[index];
 	}
 	out[++nindex] = '\0';
 	return (out);
+}
+
+int	add_spc4(int *index, int *nindex, char *str,char **out)
+{
+	if((*index) != 0)
+		(*out)[++(*nindex)] = ' ';
+	(*out)[++(*nindex)] = '"';
+	while (str[++(*index)] != '"' && str[(*index)])
+		(*out)[++(*nindex)] = str[(*index)];
+	if(str[(*index)] == '\0')
+		return -1;
+	(*out)[++(*nindex)] = '"';
+	(*out)[++(*nindex)] = ' ';
+	(*index)++;
+	return 0;
 }
 
 int	add_spc3(int *index, int *nindex, char *str,char **out)
