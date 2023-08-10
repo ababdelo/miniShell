@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MS.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:22:16 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/10 18:55:04 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/08/10 21:19:16 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,12 @@ int pipe_cntr(char *str);
 int lredir_cntr(char *str);
 int rredir_cntr(char *str);
 int herd_cntr(char *str);
+int append_cntr(char *str);
 
 char *str_norm(char *str);
 char *organizer(int index, int nindex, int cntr, char *str);
 void	add_spc(int *index, int *nindex, char *str,char **out);
+void	add_spc2(int *index, int *nindex, char *str,char **out);
+int	add_spc3(int *index, int *nindex, char *str,char **out);
 /************************************************************************/
 #endif

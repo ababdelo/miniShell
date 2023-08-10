@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Organizer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:15:23 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/10 18:59:08 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/08/10 21:32:22 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,24 @@ char *str_norm(char *str)
 		return "pipe_cntr";
 	cntr += ret;
 	ret = lredir_cntr(str);
-	if (ret == -1)
+	if (ret < 0)
 	{
+		cntr += ret * -1;
 		ret = herd_cntr(str);
 		if (ret == -1)
-			return "pipe_cntr";
+			return "herd_cntr";
 		cntr += ret;	
 	}
 	else
 		cntr += ret;
 	ret = rredir_cntr(str);
-	if (ret == -1)
+	if (ret < 0)
 	{
-		;
+		cntr += ret * -1;
+		ret = append_cntr(str);
+		if (ret == -1)
+			return "append_cntr";
+		cntr += ret;	
 	}
 	else
 		cntr += ret;
@@ -49,8 +54,6 @@ char *str_norm(char *str)
 
 char *organizer(int index, int nindex, int cntr, char *str)
 {
-	printf("%zu %d  %zu \n",ft_strlen(str),cntr, (ft_strlen(str) + cntr +1));
-	// exit(1);
 	char *out;
 	out = malloc((sizeof(char) * ft_strlen(str)) + cntr +1);
 	if(!out)
@@ -60,15 +63,48 @@ char *organizer(int index, int nindex, int cntr, char *str)
 		if (str[index] == '|')
 			add_spc(&index,&nindex,str,&out);
 		if (str[index] == '<' &&  str[index +1] == '<')
-			add_spc(&index,&nindex,str,&out);
+			add_spc2(&index,&nindex,str,&out);
 		else if (str[index] == '<')
 			add_spc(&index,&nindex,str,&out);
-		if (str[index] == '>')
+		if (str[index] == '>' && str[index + 1] == '>')
+			add_spc2(&index,&nindex,str,&out);
+		else if (str[index] == '>')
 			add_spc(&index,&nindex,str,&out);
+		else if(str[index] == '\'')
+			if (add_spc3(&index, &nindex, str, &out) == -1)
+				return "Inclosed single quote";
+		if(str[index] == '\0')
+			break;
 		out[++nindex] = str[index];
 	}
 	out[++nindex] = '\0';
 	return (out);
+}
+
+int	add_spc3(int *index, int *nindex, char *str,char **out)
+{
+	if((*index) != 0)
+		(*out)[++(*nindex)] = ' ';
+	(*out)[++(*nindex)] = '\'';
+	while (str[++(*index)] != '\'' && str[(*index)])
+		(*out)[++(*nindex)] = str[(*index)];
+	if(str[(*index)] == '\0')
+		return -1;
+	(*out)[++(*nindex)] = '\'';
+	(*out)[++(*nindex)] = ' ';
+	(*index)++;
+	return 0;
+}
+
+void	add_spc2(int *index, int *nindex, char *str,char **out)
+{
+	if (str[(*index) - 1] != ' ')
+		(*out)[++(*nindex)] = ' ';
+	(*out)[++(*nindex)] = str[(*index)];
+	(*out)[++(*nindex)] = str[(*index)];
+	if (str[(*index) + 2] != ' ')
+		(*out)[++(*nindex)] = ' ';
+	(*index)+= 2;
 }
 
 void	add_spc(int *index, int *nindex, char *str,char **out)
