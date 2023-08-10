@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MS.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:23:47 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/10 18:20:16 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/08/10 22:22:42 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,10 @@ int main(int ac, char **av, char **env)
 	}
 	else
 		printf("Enter specific argumments :)\n");
+	
+	// char *path = "/bin/cat";
+	// char *new[] = {"/bin/cat",av[1],NULL};
+	// 	// printf("%s %s\n",new[0],new[1]);
+	// execve(path,new,env);
+	// perror("error\n");
 }
