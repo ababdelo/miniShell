@@ -6,7 +6,7 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:22:16 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/10 14:54:27 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/08/10 18:55:04 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,15 @@ char	*ft_strnstr(const char *str, const char *to_f, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 
+
+/*************************************************************************/
+int pipe_cntr(char *str);
+int lredir_cntr(char *str);
+int rredir_cntr(char *str);
+int herd_cntr(char *str);
+
+char *str_norm(char *str);
+char *organizer(int index, int nindex, int cntr, char *str);
+void	add_spc(int *index, int *nindex, char *str,char **out);
+/************************************************************************/
 #endif

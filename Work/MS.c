@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MS.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:23:47 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/10 14:31:04 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/10 18:20:16 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int main(int ac, char **av, char **env)
 {
-	if (ac >=2 )
+	(void) env;
+	if (ac == 2 )
 	{
-		
+		printf("%s\n", str_norm(av[1]));
 	}
 	else
-		printf("Enter some argumments :)\n");
+		printf("Enter specific argumments :)\n");
 }
