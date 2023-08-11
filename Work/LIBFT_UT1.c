@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:23:26 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/11 17:32:19 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/11 22:02:13 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,15 @@ void	helper(int *index, char const *str)
 {
 	if (str[(*index)] == '\'')
 	{
-		while (str[++(*index)] != '\'');
-		(*index)++;
+		while (str[++(*index)] != '\'' && str[(*index)]);
+		if(str[(*index)] == '\'')
+			(*index)++;
 	}
-	if (str[(*index)] == '"')
+	if (str[(*index)] == '"' )
 	{
-		while (str[++(*index)] != '"');
-		(*index)++;
+		while (str[++(*index)] != '"' && str[(*index)]);
+		if(str[(*index)] == '\'')
+			(*index)++;
 	}
 }
 

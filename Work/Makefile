@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/11 15:33:56 by ababdelo          #+#    #+#              #
-#    Updated: 2023/08/11 15:48:47 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/08/11 20:34:39 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ RM = rm -f
 
 TFLAGS = -lpthread
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 
 ASAN_FLAGS = -fsanitize=address -g3
 

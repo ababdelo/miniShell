@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:15:16 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/11 14:38:43 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/11 22:44:00 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,8 @@ int pipe_cntr(char *str)
 	int cntr = 0;
 	while (str[++index])
 	{
-		if (str[index] == '\'')
-			while (str[++index] != '\'');
-		if (str[index] == '"')
-			while (str[++index] != '"');
-		if (str[index] == '|')
+		helper(&index,str);
+		if (str[index] == '|' && str[index] != '\0')
 		{
 			if (str[index - 1] != '|')
 				cntr++;
@@ -34,7 +31,7 @@ int pipe_cntr(char *str)
 				return -1;
 		}
 	}
-	// printf("pipe_cntr %d\n", cntr);
+	printf("pipe_cntr %d\n", cntr);
 	return cntr;
 }
 
@@ -42,53 +39,52 @@ int lredir_cntr(char *str)
 {
 	int index = -1;
 	int cntr = 0;
+	int sign = 1;
 	while (str[++index])
 	{
-		if (str[index] == '\'')
-			while (str[++index] != '\'');
-		if (str[index] == '"')
-			while (str[++index] != '"');
-		if (str[index] == '<')
+		helper(&index,str);
+		if (str[index] == '<' && str[index] != '\0')
 		{
 			if (str[index - 1] != '<')
 				cntr++;
 			else
-				return cntr * -1;
+				if(sign > 0)
+					sign = -1;
 			if (str[index + 1] != '<')
 				cntr++;
 			else
-				return cntr * -1;
+				if(sign > 0)
+					sign = -1;
 		}
 	}
-	// printf("lredir_cntr %d\n", cntr);
-	return cntr;
+	printf("lredir_cntr %d\n", cntr);
+	return cntr * sign;
 }
 
 int rredir_cntr(char *str)
 {
 	int index = -1;
 	int cntr = 0;
+	int sign = 1;
 	
 	while (str[++index])
 	{
-		if (str[index] == '\'')
-			while (str[++index] != '\'');
-		if (str[index] == '"')
-			while (str[++index] != '"');
-		if (str[index] == '>')
+		helper(&index,str);
+		if (str[index] == '>' && str[index] != '\0')
 		{
 			if (str[index - 1] != '>')
 				cntr++;
 			else
-				return -1;
+				if(sign > 0)
+					sign = -1;
 			if (str[index + 1] != '>')
 				cntr++;
 			else
-				return -1;
+				if(sign > 0)
+					sign = -1;
 		}
 	}
-	// printf("rredir_cntr %d\n", cntr);
-	return cntr;
+	return cntr * sign;
 }
 
 int herd_cntr(char *str)
@@ -104,11 +100,8 @@ int herd_cntr(char *str)
 	}
 	while (str[++index])
 	{
-		if (str[index] == '\'')
-			while (str[++index] != '\'');
-		if (str[index] == '"')
-			while (str[++index] != '"');
-		if(str[index] == '<' )
+		helper(&index,str);
+		if(str[index] == '<' && str[index] != '\0')
 		{
 			if(str[index + 1] == '<')
 			{
@@ -125,8 +118,8 @@ int herd_cntr(char *str)
 				return (-1);
 		}
 	}
-	// printf("herd_cntr %d\n", cntr);
-	return cntr;
+	printf("herd_cntr %d\n", cntr);
+	return 0;
 }
 
 int append_cntr(char *str)
@@ -142,11 +135,8 @@ int append_cntr(char *str)
 	}
 	while (str[++index])
 	{
-		if (str[index] == '\'')
-			while (str[++index] != '\'');
-		if (str[index] == '"')
-			while (str[++index] != '"');
-		if(str[index] == '>' )
+		helper(&index,str);
+		if(str[index] == '>' && str[index] != '\0')
 		{
 			if(str[index + 1] == '>')
 			{
@@ -163,6 +153,6 @@ int append_cntr(char *str)
 				return (-1);
 		}
 	}
-	// printf("append_cntr %d\n", cntr);
-	return cntr;
+	printf("append_cntr %d\n", cntr);
+	return 0;
 }
