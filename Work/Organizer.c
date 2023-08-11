@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:15:23 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/10 21:41:52 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:04:20 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,12 @@ char *organizer(int index, int nindex, int cntr, char *str)
 		}
 		if(str[index] == '\0')
 			break;
-		out[++nindex] = str[index];
+		if (str[index] == '|' || str[index] == '<'
+			|| str[index] == '>' || str[index] == '"'
+			|| str[index] == '\'')
+			index--;
+		else
+			out[++nindex] = str[index];
 	}
 	out[++nindex] = '\0';
 	return (out);
@@ -90,30 +95,24 @@ char *organizer(int index, int nindex, int cntr, char *str)
 
 int	add_spc4(int *index, int *nindex, char *str,char **out)
 {
-	if((*index) != 0)
-		(*out)[++(*nindex)] = ' ';
 	(*out)[++(*nindex)] = '"';
 	while (str[++(*index)] != '"' && str[(*index)])
 		(*out)[++(*nindex)] = str[(*index)];
 	if(str[(*index)] == '\0')
 		return -1;
 	(*out)[++(*nindex)] = '"';
-	(*out)[++(*nindex)] = ' ';
 	(*index)++;
 	return 0;
 }
 
 int	add_spc3(int *index, int *nindex, char *str,char **out)
 {
-	if((*index) != 0)
-		(*out)[++(*nindex)] = ' ';
 	(*out)[++(*nindex)] = '\'';
 	while (str[++(*index)] != '\'' && str[(*index)])
 		(*out)[++(*nindex)] = str[(*index)];
 	if(str[(*index)] == '\0')
 		return -1;
 	(*out)[++(*nindex)] = '\'';
-	(*out)[++(*nindex)] = ' ';
 	(*index)++;
 	return 0;
 }

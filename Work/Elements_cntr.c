@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:15:16 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/10 20:46:01 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/11 14:38:43 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int pipe_cntr(char *str)
 	int cntr = 0;
 	while (str[++index])
 	{
+		if (str[index] == '\'')
+			while (str[++index] != '\'');
+		if (str[index] == '"')
+			while (str[++index] != '"');
 		if (str[index] == '|')
 		{
 			if (str[index - 1] != '|')
@@ -40,6 +44,10 @@ int lredir_cntr(char *str)
 	int cntr = 0;
 	while (str[++index])
 	{
+		if (str[index] == '\'')
+			while (str[++index] != '\'');
+		if (str[index] == '"')
+			while (str[++index] != '"');
 		if (str[index] == '<')
 		{
 			if (str[index - 1] != '<')
@@ -63,6 +71,10 @@ int rredir_cntr(char *str)
 	
 	while (str[++index])
 	{
+		if (str[index] == '\'')
+			while (str[++index] != '\'');
+		if (str[index] == '"')
+			while (str[++index] != '"');
 		if (str[index] == '>')
 		{
 			if (str[index - 1] != '>')
@@ -91,7 +103,11 @@ int herd_cntr(char *str)
 			return (-1);
 	}
 	while (str[++index])
-	{		
+	{
+		if (str[index] == '\'')
+			while (str[++index] != '\'');
+		if (str[index] == '"')
+			while (str[++index] != '"');
 		if(str[index] == '<' )
 		{
 			if(str[index + 1] == '<')
@@ -125,7 +141,11 @@ int append_cntr(char *str)
 			return (-1);
 	}
 	while (str[++index])
-	{		
+	{
+		if (str[index] == '\'')
+			while (str[++index] != '\'');
+		if (str[index] == '"')
+			while (str[++index] != '"');
 		if(str[index] == '>' )
 		{
 			if(str[index + 1] == '>')
