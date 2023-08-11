@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:22:16 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/11 17:30:53 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/11 20:29:40 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	*sep_pos(char const *str, char sep, int cntr);
 int	word_cnt(char const *s, char del);
 void	helper(int *index, char const *str);
 
-char	**ft_splite(char *str, char sep);
+char	**ft_split(char *str, char sep);
 
 // int		wrd_cnt(char const *s, char del);
 // char	**ft_split(char const *s, char c);

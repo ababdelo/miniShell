@@ -6,11 +6,28 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:23:47 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/11 17:28:28 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/11 20:29:24 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MS.h"
+
+
+void	helper2(int *index, char const *str)
+{
+	if (str[(*index)] == '\'')
+	{
+		while (str[++(*index)] != '\'' && str[(*index)]);
+		if(str[(*index)] == '\'')
+			(*index)++;
+	}
+	if (str[(*index)] == '"' )
+	{
+		while (str[++(*index)] != '"' && str[(*index)]);
+		if(str[(*index)] == '\'')
+			(*index)++;
+	}
+}
 
 int	word_cnt(char const *s, char del)
 {
@@ -21,11 +38,11 @@ int	word_cnt(char const *s, char del)
 	count = 0;
 	while (s[++index] != '\0')
 	{
-		helper(&index, s);
+		helper2(&index, s);
 		if(s[index] == del)
 			count++;
 	}
-	// printf("------------ [%d] ------------\n", count+1);
+	printf("pipe_cnt: %d\n", count);
 	return (count);
 }
 
@@ -40,11 +57,14 @@ int	*sep_pos(char const *str, char sep, int cntr)
 		return NULL;
 	while (str[++index])
 	{
-		helper(&index, str);
+		helper2(&index, str);
 		if (str[index] == sep)
 			pos[++pindex] = index;
 	}
-	pos[++pindex] = -1;
+	pos[++pindex] = index;
+	index =-1;
+	while(++index < cntr +1)
+		printf("sep_pos: %d\n",pos[index]);
 	return pos;
 }
 
@@ -52,32 +72,40 @@ size_t	ft_wrdlen(char const *str, char sep)
 {
 	int	index;
 
-	index = -1;
+	index = 0;
+	printf("---------:%s\n", str);
 	if (!str)
 		return (0);
-	while (str[++index] && str[index] != sep)
-		helper(&index, str);
+	while (str[index] && str[index] != sep)
+	{
+		helper2(&index, str);
+		++index;
+	}
+	printf("word_len: %d\n", index);
 	return (index);
 }
 
-char **ft_splite(char *str, char sep)
+char **ft_split(char *str, char sep)
 {
 	int cntr;
 	int *pos;
 	char	**ret;
-	int	wrd_len = 0;
+	int len = 0;
+	int	wrd_len = -1;
 	int str_index = -1;
 	int pos_index = 0;
-	int ret_index = -1;
+	int ret_index = 0;
 	int index = -1;
 	cntr = word_cnt(str, sep);
 	pos = sep_pos(str, sep, cntr);
 	ret = malloc(sizeof(char*) * (cntr + 1) + 1);
 	if (!ret)
 		return NULL;
-	while (pos[++str_index] != -1)
+	cntr+=1;
+	while (++str_index < cntr)
 	{
-		wrd_len = ft_wrdlen(&str[wrd_len], sep);
+		wrd_len = ft_wrdlen(&str[len], sep);
+		len += wrd_len+1;
 		ret[str_index] = malloc(sizeof(char) * wrd_len + 1);
 		if (!ret[str_index])
 			return NULL;
@@ -88,19 +116,23 @@ char **ft_splite(char *str, char sep)
 		if (str_index < pos[pos_index])
 			ret[ret_index][++index] = str[str_index];
 		else
-		{	
-			pos_index++;
-			ret_index++;
+		{
+			ret[ret_index][++index] = '\0';
+			if(pos_index < cntr)
+				pos_index++;
+			if(ret_index < cntr)
+				ret_index++;
 			index = -1;
 		}
 	}
+	printf();
+	ret[++ret_index] = NULL;
 	free(pos);
 	// 	printf("pos[%d] : %d\n", index, pos[index]);
 	return ret;
 }
 int main(int ac, char **av, char **env)
 {
-	printf("old line: %s\n",av[1]);
 	(void) env;
 	(void) ac;
 	ft_parser(av[1]);
