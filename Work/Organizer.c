@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:15:23 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/11 22:32:44 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/12 17:29:38 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char *str_norm(char *str)
 	else
 		cntr += ret;
 	ret = rredir_cntr(str);
-	printf("rredir_cntr %d\n", ret);
+	// printf("rredir_cntr %d\n", ret);
 	if (ret < 0)
 	{
 		cntr += ret * -1;
@@ -57,7 +57,6 @@ char *organizer(int index, int nindex, int cntr, char *str)
 {
 	char *out;
 	out = malloc((sizeof(char) * (ft_strlen(str)) + cntr +2));
-	printf("lenlen: %d\n",cntr);
 	if(!out)
 		return "failed";
 	while (str[++index])

@@ -6,110 +6,47 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:23:32 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/11 17:36:12 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/12 16:06:06 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MS.h"
 
-size_t	ft_strlen(char const *str)
+void split_prt2(t_splitval *splitval, char *str)
 {
-	int	index;
-
-	index = 0;
-	if (!str)
-		return (0);
-	while (str[index])
-		index++;
-	return (index);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	int		index;	
-	char	*dst;
-
-	index = 0;
-	dst = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
-	if (!dst)
-		return (NULL);
-	while (s1[index] != '\0')
+	while (str[++splitval->str_index])
 	{
-		dst[index] = s1[index];
-		index++;
+		if (splitval->str_index < splitval->pos[splitval->pos_index])
+			splitval->ret[splitval->ret_index][++splitval->index] = str[splitval->str_index];
+		else
+		{
+			splitval->ret[splitval->ret_index][++splitval->index] = '\0';
+			if(splitval->pos_index < splitval->cntr)
+				splitval->pos_index++;
+			if(splitval->ret_index < splitval->cntr)
+				splitval->ret_index++;
+			splitval->index = -1;
+		}
 	}
-	dst[index] = '\0';
-	return (dst);
+	splitval->ret[splitval->ret_index][++splitval->index] = '\0';
+	splitval->ret[++splitval->ret_index] = NULL;
 }
 
-// size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-// {
-// 	size_t	index;
-// 	size_t	srcsize;
-
-// 	index = 0;
-// 	srcsize = ft_strlen(src);
-// 	if (dstsize != 0)
-// 	{
-// 		while (src[index] != '\0' && index < dstsize - 1)
-// 		{
-// 			dst[index] = src[index];
-// 			index++;
-// 		}
-// 		dst[index] = '\0';
-// 	}
-// 	return (srcsize);
-// }
-
-// char	*ft_strnstr(const char *str, const char *to_f, size_t len)
-// {
-// 	size_t	x;
-// 	size_t	y;
-
-// 	x = 0;
-// 	if (to_f[0] == 0)
-// 		return ((char *)&str[x]);
-// 	if (len == 0)
-// 		return (NULL);
-// 	while (str[x] != '\0')
-// 	{
-// 		y = 0;
-// 		while (str[x + y] == to_f[y] && x + y < len)
-// 		{
-// 			if (to_f[y + 1] == '\0')
-// 				return ((char *) &str[x + 5]);
-// 			y++;
-// 		}
-// 		x++;
-// 	}
-// 	return (NULL);
-// }
-
-// char	*ft_strjoin(char const *s1, char const *s2)
-// {
-// 	char	*dst;
-// 	size_t	size;
-// 	size_t	index;
-
-// 	index = 0;
-// 	if (!s1 || !s2)
-// 		return (NULL);
-// 	size = (ft_strlen(s1) + ft_strlen(s2) + 2);
-// 	dst = malloc (size * sizeof(char));
-// 	if (!dst)
-// 		return (NULL);
-// 	while (index < ft_strlen(s1))
-// 	{
-// 		dst[index] = s1[index];
-// 		index++;
-// 	}
-// 	dst[index] = '/';
-// 	index = 0;
-// 	while (index < ft_strlen(s2))
-// 	{
-// 		dst[ft_strlen(s1) + index + 1] = s2[index];
-// 		index++;
-// 	}
-// 	dst[size - 1] = '\0';
-// 	return (&dst[0]);
-// }
+char **split_prt1(char *str, char sep, t_splitval *splitval)
+{
+	if (!sval_initializer(splitval, str, sep))
+		return NULL;
+	splitval->cntr+=1;
+	while (++splitval->str_index < splitval->cntr)
+	{
+		splitval->wrd_len = ft_wrdlen(&str[splitval->len], sep);
+		splitval->len += splitval->wrd_len+1;
+		splitval->ret[splitval->str_index] = malloc(sizeof(char) * splitval->wrd_len + 1);
+		if (!splitval->ret[splitval->str_index])
+			return NULL;
+	}
+	splitval->str_index = -1;
+	split_prt2(splitval, str);
+	free(splitval->pos);
+	return splitval->ret;
+}

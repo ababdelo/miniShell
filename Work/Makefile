@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/11 15:33:56 by ababdelo          #+#    #+#              #
-#    Updated: 2023/08/11 20:34:39 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/08/12 14:59:09 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 ASAN_FLAGS = -fsanitize=address -g3
 
-SRCS = MS.c Organizer.c Parser.c Elements_cntr.c LIBFT_UT1.c LIBFT_UT2.c
+SRCS = MS.c Organizer.c Parser.c Elements_cntr.c LIBFT_UT1.c LIBFT_UT2.c Initializer.c 
 
 OBJS = $(SRCS:.c=.o)
 # ============================================================= #
