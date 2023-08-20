@@ -1,0 +1,4 @@
+**/.DS_Store
+tmp/*
+.vscode/*
+Libraries/libft/libtester.c
