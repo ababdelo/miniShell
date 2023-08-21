@@ -6,14 +6,13 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:50:35 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/21 17:50:36 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:22:48 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "lexer.h"
 
-int	is_whitespace(char c)
+int	is_wide_space(char c)
 {
 	return (c == ' ' || (c > 8 && c < 14));
 }
@@ -23,7 +22,7 @@ int	skip_spaces(char *str, int i)
 	int	j;
 
 	j = 0;
-	while (is_whitespace(str[i + j]))
+	while (is_wide_space(str[i + j]))
 		j++;
 	return (j);
 }
@@ -48,7 +47,7 @@ int	read_words(int i, char *str, t_lexer **lexer_list)
 	{
 		j += handle_quotes(i + j, str, 34);
 		j += handle_quotes(i + j, str, 39);
-		if (is_whitespace(str[i + j]))
+		if (is_wide_space(str[i + j]))
 			break ;
 		else
 			j++;

@@ -6,7 +6,7 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:50:26 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/21 17:50:29 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:16:50 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ int	handle_token(char *str, int i, t_lexer **lexer_list)
 		if (!add_node(NULL, token, lexer_list))
 			return (-1);
 		return (1);
-	}	
+	}
 	return (0);
 }
