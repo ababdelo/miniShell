@@ -6,12 +6,12 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:43:53 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/21 17:44:20 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:00:30 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef lexer_H
-# define lexer_H
+#ifndef LEXER_H
+# define LEXER_H
 # include "minishell.h"
 
 typedef enum s_tokens
@@ -33,5 +33,11 @@ typedef struct s_lexer
 }	t_lexer;
 
 int		handle_quotes(int i, char *str, char del);
+
+//t_lexer_utils
+t_lexer	*ft_lexernew(char *str, int token);
+void	ft_lexeradd_back(t_lexer **lst, t_lexer *new);
+void	ft_lexerdelone(t_lexer **lst, int i);
+void	ft_lexerclear(t_lexer **lst);
 
 #endif
