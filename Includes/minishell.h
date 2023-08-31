@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:07:02 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/19 22:09:28 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:00:51 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef MINISHELL_H
+#ifndef MINISHELL_H
 # define MINISHELL_H
 
 # include <readline/readline.h>
@@ -24,4 +24,4 @@
 # include "builtins.h"
 # include "executor.h"
 
-# endif
+#endif
