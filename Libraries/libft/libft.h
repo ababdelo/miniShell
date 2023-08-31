@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:05:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/19 22:09:30 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/31 12:49:43 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_gnl_strjoin(char *s1, char *s2);
 char	*ft_create_line(char *saved);
 char	*ft_remove_line(char *saved);
-int	ft_check_nl(char *input);
+int		ft_check_nl(char *input);
 char	*commit_join(char *s1, char *s2);
 char	*read_buff(int fd, char *saved);
 char	*get_next_line(int fd);
