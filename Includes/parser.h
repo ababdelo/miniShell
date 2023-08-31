@@ -6,7 +6,7 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:45:05 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/21 17:45:27 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/08/31 12:31:21 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_simple_cmds
 }	t_simple_cmds;
 
 int				parse_envp(t_tools *tools);
+char			*find_path(char **envp);
 int				find_pwd(t_tools *tools);
 int				parser(t_tools *tools);
 

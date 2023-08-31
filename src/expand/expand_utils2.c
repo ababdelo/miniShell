@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   expand_utils2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 17:28:26 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/31 12:28:49 by elel-yak         ###   ########.fr       */
+/*   Created: 2023/08/31 09:57:52 by elel-yak          #+#    #+#             */
+/*   Updated: 2023/08/31 12:23:07 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
-# include "minishell.h"
+#include "minishell.h"
 
-void	parser_error(int error, t_tools *tools, t_lexer *lexer_list);
-int		parser_double_token_error(t_tools *tools, t_lexer *lexer_list,
-			t_tokens token);
-void	lexer_error(int error, t_tools *tools);
-int		cmd_not_found(char *str);
-int		export_error(char *c);
+int	question_mark(char **tmp)
+{
+	free(*tmp);
+	*tmp = ft_itoa(g_global.error_num);
+	return (ft_strlen(*tmp) + 1);
+}
 
-//ft_error
-int		ft_error(int error, t_tools *tools);
+char	*delete_quotes(char *str, char c)
+{
+	int	i;
+	int	j;
 
-#endif
+	i = 0;
+	j = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+		{
+			j = 0;
+			while (str[i + j] == c)
+				j++;
+			ft_strlcpy(&str[i], &str[i + j], strlen(str) - i);
+		}
+		i++;
+	}
+	return (str);
+}
