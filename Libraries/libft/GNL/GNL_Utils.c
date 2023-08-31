@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   GNL_Utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 09:35:56 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/19 19:28:17 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/08/31 12:50:04 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ char	*ft_gnl_strjoin(char *s1, char *s2)
 	{
 		s1_2[i + j] = s2[j];
 		j++;
-	}	
+	}
 	s1_2[i + j] = '\0';
 	free(s1);
 	return (s1_2);
 }
 
 char	*ft_create_line(char *saved)
-{	
+{
 	int		line_len;
 	int		i;
 	char	*temp;
