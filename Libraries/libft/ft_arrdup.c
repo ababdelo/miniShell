@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arrdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 17:09:02 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/20 17:09:41 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:29:13 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	**ft_arrdup(char **arr)
 	int		i;
 
 	i = -1;
-	while (arr[++i]);
+	while (arr[++i])
+		;
 	rtn = ft_calloc(sizeof(char *), i + 1);
 	if (!rtn)
 		return (NULL);
