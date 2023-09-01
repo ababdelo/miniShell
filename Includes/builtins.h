@@ -6,14 +6,14 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 09:49:41 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:37:48 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 13:17:40 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUILTINS_H
 # define BUILTINS_H
 
-# include "../../includes/minishell.h"
+# include "minishell.h"
 
 //builtins
 void	change_path(t_tools *tools);

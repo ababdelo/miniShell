@@ -6,14 +6,14 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:28:26 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:37:09 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 13:17:47 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_H
 # define ERROR_H
 
-# include "../../includes/minishell.h"
+# include "minishell.h"
 
 void	parser_error(int error, t_tools *tools, t_lexer *lexer_list);
 int		parser_double_token_error(t_tools *tools, t_lexer *lexer_list,
