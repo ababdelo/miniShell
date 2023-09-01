@@ -6,13 +6,14 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:14:59 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/31 12:49:02 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:37:29 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EXPAND_H
 # define EXPAND_H
-# include "minishell.h"
+
+# include "../../includes/minishell.h"
 
 size_t	dollar_sign(char *str);
 size_t	equal_sign(char *str);

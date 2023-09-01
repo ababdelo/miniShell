@@ -6,13 +6,14 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:43:53 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/31 12:30:00 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:37:32 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEXER_H
 # define LEXER_H
-# include "minishell.h"
+
+# include "../../includes/minishell.h"
 
 typedef enum s_tokens
 {
