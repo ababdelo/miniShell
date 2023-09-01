@@ -2,4 +2,5 @@
 tmp/*
 .vscode/*
 Libraries/libft/libtester.c
+a.out
 Subject/*
