@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:31:53 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/08/21 17:53:12 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:23:13 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../../includes/minishell.h"
 
 t_simple_cmds	*ft_simple_cmdsnew(char **str,
 	int num_redirections, t_lexer *redirections)

@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:51:13 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/21 17:51:16 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:22:53 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../includes/minishell.h"
 
 char	*join_heredoc(char *str1, char *str2)
 {
