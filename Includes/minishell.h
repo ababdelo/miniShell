@@ -6,7 +6,7 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:07:02 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/09/01 12:20:45 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:38:22 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <readline/readline.h>
 # include <readline/history.h>
+# include <dirent.h>
+# include <signal.h>
 # include "../Libraries/libft/libft.h"
 # include "parser.h"
 # include "utils.h"
