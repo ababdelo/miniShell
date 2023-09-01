@@ -6,7 +6,7 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:07:02 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/09/01 12:38:22 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 13:22:48 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include "error.h"
 # include "lexer.h"
 # include "builtins.h"
-# include "expander.h"
+# include "expand.h"
 # include "executor.h"
 
 typedef struct s_global
