@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 04:55:11 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/31 12:22:43 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:21:59 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../includes/minishell.h"
 
 size_t	dollar_sign(char *str)
 {

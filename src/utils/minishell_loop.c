@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:52:02 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/21 17:52:04 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:23:09 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../includes/minishell.h"
 
 int	minishell_loop(t_tools *tools);
 

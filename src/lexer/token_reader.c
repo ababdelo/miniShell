@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:50:35 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/21 18:22:48 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:22:37 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lexer.h"
+#include "../../includes/minishell.h"
 
 int	is_wide_space(char c)
 {

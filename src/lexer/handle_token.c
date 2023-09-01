@@ -6,12 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:50:26 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/21 18:16:50 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:22:21 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-#include "lexer.h"
+#include "../../includes/minishell.h"
 
 t_tokens	check_token(int c)
 {

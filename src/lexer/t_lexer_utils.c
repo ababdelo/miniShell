@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:52:26 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/21 17:52:28 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:22:34 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../../includes/minishell.h"
 
 t_lexer	*ft_lexernew(char *str, int token)
 {

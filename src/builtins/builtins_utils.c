@@ -6,12 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:02:42 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/31 12:21:15 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:21:53 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-#include "builtins.h"
+#include "../../includes/minishell.h"
 
 void	change_path(t_tools *tools)
 {

@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:53:52 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/08/21 17:53:54 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:23:17 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../includes/minishell.h"
 
 int	find_matching_quote(char *line, int i, int *num_del, int del)
 {
