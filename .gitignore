@@ -3,4 +3,5 @@ tmp/*
 .vscode/*
 Libraries/libft/libtester.c
 a.out
+Libraries/libft/libft.a
 Subject/*
