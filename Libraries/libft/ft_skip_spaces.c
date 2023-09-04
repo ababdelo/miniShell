@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_skip_spaces.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/19 21:07:02 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/09/04 11:46:02 by ababdelo         ###   ########.fr       */
+/*   Created: 2023/09/04 11:29:23 by ababdelo          #+#    #+#             */
+/*   Updated: 2023/09/04 11:29:45 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include "../Libraries/libft/libft.h"
-# include <readline/readline.h>
-# include <readline/history.h>
-# include "list.h"
-# include <dirent.h>
-# include <signal.h>
-# include "prompt.h"
-# include "parser.h"
-# include "utils.h"
-# include "error.h"
-# include "lexer.h"
-# include "builtins.h"
-# include "expand.h"
-# include "executor.h"
+int	ft_skip_spaces(char *str, int i)
+{
+	int	j;
 
-#endif
+	j = 0;
+	while (ft_is_wide_space(str[i + j]))
+		j++;
+	return (j);
+}

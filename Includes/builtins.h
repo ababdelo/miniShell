@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 09:49:41 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 13:17:40 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/03 12:29:30 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include "minishell.h"
 
 //builtins
+
+int	(*builtin_arr(char *str))(t_tools *tools, t_simple_cmds *simple_cmd);
+
 void	change_path(t_tools *tools);
 
 int		ft_echo(t_tools *tools, t_simple_cmds *simple_cmd);

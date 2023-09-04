@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:52:09 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:22:56 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:15:51 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 int	find_pwd(t_tools *tools)
 {

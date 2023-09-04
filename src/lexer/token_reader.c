@@ -6,26 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:50:35 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:22:37 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:15:34 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
-
-int	is_wide_space(char c)
-{
-	return (c == ' ' || (c > 8 && c < 14));
-}
-
-int	skip_spaces(char *str, int i)
-{
-	int	j;
-
-	j = 0;
-	while (is_wide_space(str[i + j]))
-		j++;
-	return (j);
-}
+#include "minishell.h"
 
 int	add_node(char *str, t_tokens token, t_lexer **lexer_list)
 {
@@ -47,7 +32,7 @@ int	read_words(int i, char *str, t_lexer **lexer_list)
 	{
 		j += handle_quotes(i + j, str, 34);
 		j += handle_quotes(i + j, str, 39);
-		if (is_wide_space(str[i + j]))
+		if (ft_is_wide_space(str[i + j]))
 			break ;
 		else
 			j++;
@@ -66,7 +51,7 @@ int	token_reader(t_tools *tools)
 	while (tools->args[i])
 	{
 		j = 0;
-		i += skip_spaces(tools->args, i);
+		i += ft_skip_spaces(tools->args, i);
 		if (check_token(tools->args[i]))
 			j = handle_token(tools->args, i, &tools->lexer_list);
 		else

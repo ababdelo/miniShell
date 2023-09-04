@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   t_simple_cmds_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:31:53 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/09/01 12:23:13 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:28:53 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 t_simple_cmds	*ft_simple_cmdsnew(char **str,
 	int num_redirections, t_lexer *redirections)

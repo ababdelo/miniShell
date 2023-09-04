@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_pwd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/19 21:07:02 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/09/04 11:46:02 by ababdelo         ###   ########.fr       */
+/*   Created: 2023/08/31 14:32:10 by ababdelo          #+#    #+#             */
+/*   Updated: 2023/09/03 11:03:14 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "minishell.h"
 
-# include "../Libraries/libft/libft.h"
-# include <readline/readline.h>
-# include <readline/history.h>
-# include "list.h"
-# include <dirent.h>
-# include <signal.h>
-# include "prompt.h"
-# include "parser.h"
-# include "utils.h"
-# include "error.h"
-# include "lexer.h"
-# include "builtins.h"
-# include "expand.h"
-# include "executor.h"
-
-#endif
+int	ft_pwd(t_tools *tools, t_simple_cmds *simple_cmd)
+{
+	(void) simple_cmd;
+	ft_putendl_fd(tools->pwd, STDOUT_FILENO);
+	return (EXIT_SUCCESS);
+}

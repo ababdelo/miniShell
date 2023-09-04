@@ -6,13 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:51:29 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:23:02 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:15:59 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
-
-void	print_parser(t_simple_cmds simple_cmds);
+#include "minishell.h"
 
 t_simple_cmds	*initialize_cmd(t_parser_tools *parser_tools)
 {

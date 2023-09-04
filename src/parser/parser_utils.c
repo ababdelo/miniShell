@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:51:20 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:22:59 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:15:55 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 t_parser_tools	init_parser_tools(t_lexer *lexer_list, t_tools *tools)
 {

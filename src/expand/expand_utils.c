@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   expand_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 04:55:11 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:21:59 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:53:38 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 size_t	dollar_sign(char *str)
 {
@@ -42,7 +42,12 @@ int	after_dol_lenght(char *str, int j)
 	i = j + 1;
 	while (str[i] != '\0' && str[i] != '$' && str[i] != ' '
 		&& str[i] != '\"' && str[i] != '\'' && str[i] != '=' && str[i] != '-'
-		&& str[i] != ':')
+		&& str[i] != ':' && str[i] != '@' && str[i] != '#' && str[i] != '%'
+		&& str[i] != '^' && str[i] != '&' && str[i] != '*' && str[i] != '('
+		&& str[i] != ')' && str[i] != '/' && str[i] != '<' && str[i] != '>'
+		&& str[i] != ',' && str[i] != '.' && str[i] != '~' && str[i] != '`'
+		&& str[i] != '{' && str[i] != '}' && str[i] != '[' && str[i] != ']'
+		&& str[i] != '!' && !(str[i] >= 9 && str[i] <= 13))
 		i++;
 	return (i);
 }
