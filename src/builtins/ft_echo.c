@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 09:16:30 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:21:55 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:16:34 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 void	print_lines(int i, char **str, int out)
 {

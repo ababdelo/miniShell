@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_re_split_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/19 21:07:02 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/09/04 11:46:02 by ababdelo         ###   ########.fr       */
+/*   Created: 2023/09/01 14:27:26 by ababdelo          #+#    #+#             */
+/*   Updated: 2023/09/01 14:34:20 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include "../Libraries/libft/libft.h"
-# include <readline/readline.h>
-# include <readline/history.h>
-# include "list.h"
-# include <dirent.h>
-# include <signal.h>
-# include "prompt.h"
-# include "parser.h"
-# include "utils.h"
-# include "error.h"
-# include "lexer.h"
-# include "builtins.h"
-# include "expand.h"
-# include "executor.h"
+char	**ft_re_split_str(char **arr)
+{
+	char	**ret;
+	char	*joined_str;
 
-#endif
+	joined_str = ft_join_split_str(arr, NULL);
+	free_arr(arr);
+	ret = ft_split(joined_str, ' ');
+	free(joined_str);
+	joined_str = ft_join_split_str(ret, NULL);
+	free_arr(ret);
+	ret = ft_split(joined_str, ' ');
+	free(joined_str);
+	return (ret);
+}

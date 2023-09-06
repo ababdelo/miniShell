@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   builtins.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/19 21:57:42 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/09/04 12:29:12 by ababdelo         ###   ########.fr       */
+/*   Created: 2023/09/03 11:17:00 by ababdelo          #+#    #+#             */
+/*   Updated: 2023/09/04 14:40:59 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int argc, char **argv, char **envp)
+int	(*builtin_arr(char *str))(t_tools *tools, t_simple_cmds *simple_cmd)
 {
-	t_tools	tools;
+	static void	*builtins[7][2] = {
+	{"echo", ft_echo},
+	{"cd", ft_cd},
+	{"pwd", ft_pwd},
+	{"export", ft_export},
+	{"unset", ft_unset},
+	{"env", ft_env},
+	{"exit", ft_exit}
+	};
+	int			i;
 
-	if (argc != 1 || argv[1])
+	i = 0;
+	while (i < 7)
 	{
-		ft_printf("This program does not accept arguments\n");
-		exit(0);
+		if (str)
+		{
+			if (!ft_strncmp(builtins[i][0], str, ft_strlen((builtins[i][0]))))
+				return (builtins[i][1]);
+		}
+		i++;
 	}
-	tools.envp = ft_arrdup(envp);
-	find_pwd(&tools);
-	implement_tools(&tools);
-	ft_printf("\n%s\n\n", WELCOME_MSG);
-	minishell_loop(&tools);
-	return (0);
+	return (NULL);
 }

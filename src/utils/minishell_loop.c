@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   minishell_loop.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:52:02 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:23:09 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/04 11:42:17 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
-
-int	minishell_loop(t_tools *tools);
+#include "minishell.h"
 
 int	implement_tools(t_tools *tools)
 {

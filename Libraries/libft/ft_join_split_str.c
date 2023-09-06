@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_join_split_str.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/19 21:07:02 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/09/04 11:46:02 by ababdelo         ###   ########.fr       */
+/*   Created: 2023/09/01 14:26:09 by ababdelo          #+#    #+#             */
+/*   Updated: 2023/09/01 14:34:29 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include "../Libraries/libft/libft.h"
-# include <readline/readline.h>
-# include <readline/history.h>
-# include "list.h"
-# include <dirent.h>
-# include <signal.h>
-# include "prompt.h"
-# include "parser.h"
-# include "utils.h"
-# include "error.h"
-# include "lexer.h"
-# include "builtins.h"
-# include "expand.h"
-# include "executor.h"
+char	*ft_join_split_str(char **split_str, char *new_str)
+{
+	char	*tmp;
+	char	*add_space;
+	int		i;
 
-#endif
+	tmp = ft_strdup(split_str[0]);
+	i = 1;
+	while (split_str[i])
+	{
+		new_str = tmp;
+		add_space = ft_strjoin(new_str, " ");
+		free(new_str);
+		tmp = ft_strjoin(add_space, split_str[i]);
+		free(add_space);
+		i++;
+	}
+	new_str = tmp;
+	return (new_str);
+}

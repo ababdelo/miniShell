@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_quotes.c                                    :+:      :+:    :+:   */
+/*   ft_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ababdelo <ababdelo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 17:50:19 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:22:18 by elel-yak         ###   ########.fr       */
+/*   Created: 2023/08/31 14:31:20 by ababdelo          #+#    #+#             */
+/*   Updated: 2023/09/03 11:02:23 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
-int	handle_quotes(int i, char *str, char del)
+int	ft_env(t_tools *tools, t_simple_cmds *simple_cmd)
 {
-	int	j;
+	int		i;
 
-	j = 0;
-	if (str[i + j] == del)
+	(void) simple_cmd;
+	i = 0;
+	while (tools->envp[i])
 	{
-		j++;
-		while (str[i + j] != del && str[i + j])
-			j++;
-		j++;
+		ft_putendl_fd(tools->envp[i], STDOUT_FILENO);
+		i++;
 	}
-	return (j);
+	return (EXIT_SUCCESS);
 }

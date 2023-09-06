@@ -6,11 +6,11 @@
 /*   By: elel-yak <elel-yak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:30:14 by elel-yak          #+#    #+#             */
-/*   Updated: 2023/09/01 12:21:44 by elel-yak         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:14:55 by elel-yak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 int	loop_if_dollar_sign(t_tools *tools, char *str, char **tmp, int j)
 {
